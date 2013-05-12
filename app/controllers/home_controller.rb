@@ -3,6 +3,7 @@ class HomeController < ApplicationController
    
     @jobs = Job.all
     @skills = Skill.all
+    @header = Header.find(1)
 
   end
 end

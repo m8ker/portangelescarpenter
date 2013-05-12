@@ -8,6 +8,8 @@
 
  <!--==============Professional Skills==============-->
 
+<p class="lead"><%= @header.summary  %></p>
+
 		  <h2>Professional Skills</h2>
 		  <hr>
 		  <div class="row-fluid">
@@ -33,7 +35,7 @@
 		  	<% @jobs.each do | job | %>
 			<div class="span6">
 			  <div class="right-block">
-			    <h3><%= job.company%></h3>
+			    <h3><%= job.company %></h3>
 				<p>From:&nbsp;<%= job.from_date %>&nbsp;&nbsp;To:&nbsp;<%= job.to_date %></p>
 				<p><%= job.my_title %></p>
 				<p><%= job.description %></p>

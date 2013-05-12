@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130512060700) do
+ActiveRecord::Schema.define(:version => 20130512084240) do
+
+  create_table "headers", :force => true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.text     "quotation"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "pdf_file_name"
+    t.string   "location"
+    t.text     "summary"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "jobs", :force => true do |t|
     t.string   "company"

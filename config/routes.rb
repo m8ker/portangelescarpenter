@@ -1,4 +1,7 @@
 Portangelescarpenter::Application.routes.draw do
+  resources :headers
+
+
   resources :jobs
 
 
