@@ -1,0 +1,40 @@
+<div class="log">
+	<% if user_signed_in? %>
+		<h5><%= link_to "Home", root_path %></h5>
+	    <span>
+	    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
+	    </span>
+	    <span>|</span>
+	  <% else %>
+	    <span>
+	    <%= link_to 'Login', new_user_session_path %>
+	    </span>
+	    <span>|</span>
+	  <% end %>
+	  <% if user_signed_in? %>
+	    <span>
+	    <%= link_to 'Edit account', edit_user_registration_path %>
+	    </span>
+	    <% if current_user.has_role? :admin %>
+	      <span>
+	      <%= link_to 'Admin', users_path %>
+	      </span>
+	    <% end %>
+	  <% else %>
+	    <span>
+	    <%= link_to 'Sign up', new_user_registration_path %>
+	    </span>
+  <% end %>
+<div>
+
+<div class="log">
+	<% if user_signed_in? %>
+	    <span>
+	    <%= link_to 'Skills', skills_path %>
+	    </span>
+	    <span>|</span>
+	    <span>
+	    <%= link_to 'Jobs', jobs_path %>
+	    </span>
+  <% end %>
+<div>

@@ -1,4 +1,49 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+	<!-- Starting main block -->
+    <div class="container-fluid">
+      <div class="row-fluid">
+	    <!--  Starting left block -->
+
+		<!-- Starting right block -->
+		<div class="span12 right-column">
+
+ <!--==============Professional Skills==============-->
+
+		  <h2>Professional Skills</h2>
+		  <hr>
+		  <div class="row-fluid">
+		  	<% @skills.each do | skill | %>
+			<div class="span3">	
+			  <div class="right-block">
+			    <h4><%= skill.name %></h4>
+				<p>
+				  <%= skill.description %>
+				</p>
+				<div class="num"><%= skill.id %></div>
+			  </div>
+			</div>
+			<% end %>
+		  </div>
+
+		<!--=================Employment History====================-->
+
+
+		  <h2> Employment History</h2>
+		  <hr>
+		  <div class="row-fluid">
+		  	<% @jobs.each do | job | %>
+			<div class="span6">
+			  <div class="right-block">
+			    <h3><%= job.company%></h3>
+				<p>From:&nbsp;<%= job.from_date %>&nbsp;&nbsp;To:&nbsp;<%= job.to_date %></p>
+				<p><%= job.my_title %></p>
+				<p><%= job.description %></p>
+				<div class="num"><%= job.id %></div>
+			  </div>
+			</div>
+			<% end %>
+		  </div>
+
+		</div>
+	  </div>
+	</div>
+</div>

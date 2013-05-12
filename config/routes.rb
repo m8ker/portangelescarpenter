@@ -1,4 +1,10 @@
 Portangelescarpenter::Application.routes.draw do
+  resources :jobs
+
+
+  resources :skills
+
+
   authenticated :user do
     root :to => 'home#index'
   end

@@ -1,26 +1,24 @@
-<%= link_to "Portangelescarpenter", root_path, :class => 'brand' %>
-<ul class="nav">
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
-    </li>
-  <% else %>
-    <li>
-    <%= link_to 'Login', new_user_session_path %>
-    </li>
-  <% end %>
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Edit account', edit_user_registration_path %>
-    </li>
-    <% if current_user.has_role? :admin %>
-      <li>
-      <%= link_to 'Admin', users_path %>
-      </li>
-    <% end %>
-  <% else %>
-    <li>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    </li>
-  <% end %>
-</ul>
+<div class="span9">
+  <%= image_tag('peter_holland.png', :class => "img-polaroid")  %>
+  <h1>Peter Holland</h1>
+  <p class="lead">Carpenter and Handyman</p>
+  <p>"Experienced commercial and home carpentry. I build from foundation to finish."</p>
+
+  <div class="clearfix"></div>
+  </div>
+  <div class="span3 hidden-phone">
+  <ul>
+    <li><i class="icon-envelope-alt"></i> peter1457@outlook.com</li>
+    <li><i class="icon-home"></i> Port Angeles, WA</li>
+    <li><i class="icon-user"></i> (360) 461-4449</li>
+    <li><%= link_to "Download Resume PDF", "#", :class => "btn btn-warning" %></li>
+  </ul>
+  
+  </div>
+  
+
+
+</div>
+  
+
+
