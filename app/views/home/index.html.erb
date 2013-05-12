@@ -7,10 +7,11 @@
 		<div class="span12 right-column">
 
  <!--==============Professional Skills==============-->
-
-<p class="lead"><%= @header.summary  %></p>
-
+<% @blurbs.find(1) do | blurb | %>
+			<p class="lead"><%= blurb.content %></p>
+<% end %>
 		  <h2>Professional Skills</h2>
+
 		  <hr>
 		  <div class="row-fluid">
 		  	<% @skills.each do | skill | %>
@@ -49,3 +50,4 @@
 	  </div>
 	</div>
 </div>
+          

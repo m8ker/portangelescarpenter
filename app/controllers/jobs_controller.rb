@@ -5,7 +5,7 @@ class JobsController < ApplicationController
   def index
     authorize! :index, @job, :message => 'Not authorized as an administrator.'
     @jobs = Job.all
-    @header = Header.find(1)
+   
 
     respond_to do |format|
       format.html # index.html.erb
@@ -18,7 +18,7 @@ class JobsController < ApplicationController
   def show
     authorize! :show, @job, :message => 'Not authorized as an administrator.'
     @job = Job.find(params[:id])
-    @header = Header.find(1)
+   
 
     respond_to do |format|
       format.html # show.html.erb
@@ -31,7 +31,7 @@ class JobsController < ApplicationController
   def new
     authorize! :new, @job, :message => 'Not authorized as an administrator.'
     @job = Job.new
-    @header = Header.find(1)
+   
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,7 +43,7 @@ class JobsController < ApplicationController
   def edit
     authorize! :edit, @job, :message => 'Not authorized as an administrator.'
     @job = Job.find(params[:id])
-    @header = Header.find(1)
+   
   end
 
   # POST /jobs
@@ -51,7 +51,7 @@ class JobsController < ApplicationController
   def create
     authorize! :create, @job, :message => 'Not authorized as an administrator.'
     @job = Job.new(params[:job])
-    @header = Header.find(1)
+   
 
     respond_to do |format|
       if @job.save
@@ -69,7 +69,7 @@ class JobsController < ApplicationController
   def update
     authorize! :update, @job, :message => 'Not authorized as an administrator.'
     @job = Job.find(params[:id])
-    @header = Header.find(1)
+   
 
     respond_to do |format|
       if @job.update_attributes(params[:job])
@@ -86,7 +86,7 @@ class JobsController < ApplicationController
   # DELETE /jobs/1.json
   def destroy
     @job = Job.find(params[:id])
-    @header = Header.find(1)
+   
     @job.destroy
 
     respond_to do |format|

@@ -1,0 +1,11 @@
+<%= simple_form_for(@blurb) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :content %>
+  </div>
+
+  <div>
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe "Headers" do
-  describe "GET /headers" do
+describe "Blurbs" do
+  describe "GET /blurbs" do
     it "works! (now write some real specs)" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get headers_path
+      get blurbs_path
       response.status.should be(200)
     end
   end

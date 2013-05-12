@@ -5,7 +5,7 @@ class SkillsController < ApplicationController
   def index
     authorize! :index, @skill, :message => 'Not authorized as an administrator.'
     @skills = Skill.all
-    @header = Header.find(1)
+   
 
     respond_to do |format|
       format.html # index.html.erb
@@ -18,7 +18,7 @@ class SkillsController < ApplicationController
   def show
     authorize! :show, @skill, :message => 'Not authorized as an administrator.'
     @skill = Skill.find(params[:id])
-    @header = Header.find(1)
+   
 
     respond_to do |format|
       format.html # show.html.erb
@@ -31,7 +31,7 @@ class SkillsController < ApplicationController
   def new
     authorize! :new, @skill, :message => 'Not authorized as an administrator.'
     @skill = Skill.new
-    @header = Header.find(1)
+   
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,7 +43,7 @@ class SkillsController < ApplicationController
   def edit
     authorize! :edit, @skill, :message => 'Not authorized as an administrator.'
     @skill = Skill.find(params[:id])
-    @header = Header.find(1)
+   
   end
 
   # POST /skills
@@ -51,7 +51,7 @@ class SkillsController < ApplicationController
   def create
     authorize! :create, @skill, :message => 'Not authorized as an administrator.'
     @skill = Skill.new(params[:skill])
-    @header = Header.find(1)
+   
 
     respond_to do |format|
       if @skill.save
@@ -69,7 +69,7 @@ class SkillsController < ApplicationController
   def update
     authorize! :update, @skill, :message => 'Not authorized as an administrator.'
     @skill = Skill.find(params[:id])
-    @header = Header.find(1)
+   
 
     respond_to do |format|
       if @skill.update_attributes(params[:skill])
@@ -87,7 +87,7 @@ class SkillsController < ApplicationController
   def destroy
     authorize! :destroy, @skill, :message => 'Not authorized as an administrator.'
     @skill = Skill.find(params[:id])
-    @header = Header.find(1)
+   
     @skill.destroy
 
     respond_to do |format|
