@@ -4,15 +4,18 @@ class UsersController < ApplicationController
   def index
     authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @users = User.all
+    @header = Header.find(1)
   end
 
   def show
     @user = User.find(params[:id])
+    @header = Header.find(1)
   end
   
   def update
     authorize! :update, @user, :message => 'Not authorized as an administrator.'
     @user = User.find(params[:id])
+    @header = Header.find(1)
     if @user.update_attributes(params[:user], :as => :admin)
       redirect_to users_path, :notice => "User updated."
     else
@@ -23,6 +26,7 @@ class UsersController < ApplicationController
   def destroy
     authorize! :destroy, @user, :message => 'Not authorized as an administrator.'
     user = User.find(params[:id])
+    @header = Header.find(1)
     unless user == current_user
       user.destroy
       redirect_to users_path, :notice => "User deleted."
